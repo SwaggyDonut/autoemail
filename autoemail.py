@@ -13,6 +13,8 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 import random
+
+
 driver = webdriver.Chrome("C:/Users/zhang/Desktop/chromedriver_win32/chromedriver")
 #set up webdriver to direct to the server
 driver.get("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin")
