@@ -25,10 +25,15 @@ composeElem = driver.find_element_by_class_name('z0') #this only works half of t
 composeElem.click()
 
 toElem = driver.find_element_by_name("to")
-toElem.send_keys('zhangduona1995@gmail.com')
+toElem.send_keys('duona.test@gmail.com')
 
 subjElem = driver.find_element_by_name("subjectbox")
 subjElem.send_keys('Hello')
 
 sendElem = driver.find_element_by_xpath("//div[text()='Send']")
 sendElem.click()
+
+'''
+This is a message change in b1 branch
+'''
+
