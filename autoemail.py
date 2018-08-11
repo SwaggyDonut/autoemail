@@ -2,7 +2,7 @@
 """
 Created on Tue Jun 12 22:18:14 2018
 
-@author: zhang
+@author: SwaggyDonut
 """
 
 from selenium import webdriver
@@ -53,10 +53,10 @@ def send_email(driver):
     except:
         pass
 
-		
+
 def quit(driver):
     driver.quit()		
-		
+
 def main():
     driver = add_driver()
     get_url(driver)
@@ -64,32 +64,9 @@ def main():
     subject_text(driver)
     send_email(driver)
     quit(driver)  		
-		
+
 if __name__ == '__main__':
     main()		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 
 
