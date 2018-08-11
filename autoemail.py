@@ -15,8 +15,8 @@ from selenium.webdriver.support.ui import Select
 import time
 import random
 
-subject_text = 'test title'
-message = 'test title'
+subject_text = 'mengmeng'
+message = '吼吼吼'
 
 def add_driver():
     driver = webdriver.Chrome("C:/Users/zhang/Desktop/chromedriver_win32/chromedriver.exe")
@@ -38,7 +38,7 @@ def subject_text(driver):
     composeElem.click()
 
     toElem = driver.find_element_by_name("to")
-    toElem.send_keys('zhangduona1995@gmail.com')
+    toElem.send_keys('cuij2@uw.edu')
 
     subjElem = driver.find_element_by_name("subjectbox")
     subjElem.send_keys(subject_text)
