@@ -2,7 +2,7 @@
 """
 Created on Tue Jun 12 22:18:14 2018
 
-@author: zhang
+@author: SwaggyDonut
 """
 
 from selenium import webdriver
@@ -13,6 +13,9 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 import time
 import random
+
+subject_text = 'test title'
+message = 'test title'
 
 def add_driver():
     driver = webdriver.Chrome("C:/Users/zhang/Desktop/chromedriver_win32/chromedriver.exe")
@@ -37,12 +40,12 @@ def subject_text(driver):
     toElem.send_keys('zhangduona1995@gmail.com')
 
     subjElem = driver.find_element_by_name("subjectbox")
-    subjElem.send_keys('yo buddy')
+    subjElem.send_keys(subject_text)
 
     editable = driver.find_element_by_css_selector('.editable')
     if editable:
         editable.click()
-        editable.send_keys('test message')
+        editable.send_keys(message)
 
 def send_email(driver):
     try:
@@ -53,10 +56,9 @@ def send_email(driver):
     except:
         pass
 
-		
 def quit(driver):
     driver.quit()		
-		
+
 def main():
     driver = add_driver()
     get_url(driver)
@@ -64,32 +66,7 @@ def main():
     subject_text(driver)
     send_email(driver)
     quit(driver)  		
-		
+
 if __name__ == '__main__':
     main()		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-
 
