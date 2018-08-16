@@ -30,7 +30,7 @@ def login(driver):
     driver.find_element_by_name("identifier").send_keys('duona.test@gmail.com')
     driver.find_element_by_xpath("//*[@id = 'identifierNext']/content/span").click()
     driver.implicitly_wait(4)
-    driver.find_element_by_name("password").send_keys('duonatest')
+    driver.find_element_by_name("password").send_keys('')
     driver.find_element_by_xpath("//*[@id = 'passwordNext']/content/span").click()
 
 def subject_text(driver):
@@ -38,7 +38,7 @@ def subject_text(driver):
     composeElem.click()
 
     toElem = driver.find_element_by_name("to")
-    toElem.send_keys('cuij2@uw.edu')
+    toElem.send_keys('')
 
     subjElem = driver.find_element_by_name("subjectbox")
     subjElem.send_keys(subject_text)
