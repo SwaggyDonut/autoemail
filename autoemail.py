@@ -15,8 +15,8 @@ from selenium.webdriver.support.ui import Select
 import time
 import random
 
-subject_text = 'mengmeng'
-message = '吼吼吼'
+subject_text = '////'
+message = '////'
 
 def add_driver():
     driver = webdriver.Chrome("C:/Users/zhang/Desktop/chromedriver_win32/chromedriver.exe")
