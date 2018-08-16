@@ -15,38 +15,42 @@ from selenium.webdriver.support.ui import Select
 import time
 import random
 
-subject_text = '////'
-message = '////'
+
+subject_text = ['test']
+message = ['test2']
+user_name = 'SecDevDemo@gmail.com'
+password = 'secdev101'
+target_email ='duona.zhang@td.com'
 
 def add_driver():
-    driver = webdriver.Chrome("C:/Users/zhang/Desktop/chromedriver_win32/chromedriver.exe")
-    return driver
+	driver = webdriver.Chrome("C:/Users/zhang/Desktop/chromedriver_win32/chromedriver.exe")
+	return driver
 
 #set up webdriver to direct to the server
 def get_url(driver):
     driver.get("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin")
 
 def login(driver):
-    driver.find_element_by_name("identifier").send_keys('duona.test@gmail.com')
+    driver.find_element_by_name("identifier").send_keys(user_name)
     driver.find_element_by_xpath("//*[@id = 'identifierNext']/content/span").click()
     driver.implicitly_wait(4)
-    driver.find_element_by_name("password").send_keys('duonatest')
+    driver.find_element_by_name("password").send_keys(password)
     driver.find_element_by_xpath("//*[@id = 'passwordNext']/content/span").click()
 
 def subject_text(driver):
-    composeElem = driver.find_element_by_class_name('z0')
-    composeElem.click()
+	composeElem = driver.find_element_by_class_name('z0')
+	composeElem.click()
 
-    toElem = driver.find_element_by_name("to")
-    toElem.send_keys('cuij2@uw.edu')
+	toElem = driver.find_element_by_name("to")
+	toElem.send_keys(target_email)
 
-    subjElem = driver.find_element_by_name("subjectbox")
-    subjElem.send_keys(subject_text)
+	subjElem = driver.find_element_by_name("subjectbox")
+	subjElem.send_keys(subject_text)
 
-    editable = driver.find_element_by_css_selector('.editable')
-    if editable:
-        editable.click()
-        editable.send_keys(message)
+	editable = driver.find_element_by_css_selector('.editable')
+	if editable:
+		editable.click()
+		editable.send_keys(message)
 
 def send_email(driver):
     try:
@@ -61,12 +65,13 @@ def quit(driver):
     driver.quit()		
 
 def main():
-    driver = add_driver()
-    get_url(driver)
-    login(driver)
-    subject_text(driver)
-    send_email(driver)
-    quit(driver)  		
+	driver = add_driver()
+	get_url(driver)
+	login(driver)
+	subject_text(driver)
+	send_email(driver)
+	time.sleep(2)
+	#quit(driver)  		
 
 if __name__ == '__main__':
     main()		
