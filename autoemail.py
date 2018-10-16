@@ -27,18 +27,19 @@ def get_url(driver):
     driver.get("https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin")
 
 def login(driver):
-    driver.find_element_by_name("identifier").send_keys('duona.test@gmail.com')
-    driver.find_element_by_xpath("//*[@id = 'identifierNext']/content/span").click()
-    driver.implicitly_wait(4)
-    driver.find_element_by_name("password").send_keys('')
-    driver.find_element_by_xpath("//*[@id = 'passwordNext']/content/span").click()
+	driver.find_element_by_name("identifier").send_keys('duona.test@gmail.com')
+	driver.find_element_by_xpath("//*[@id = 'identifierNext']/content/span").click()
+	driver.implicitly_wait(4)
+	driver.find_element_by_name("password").send_keys('duonatest')
+	time.sleep(1)
+	driver.find_element_by_xpath("//*[@id = 'passwordNext']/content/span").click()
 
-def subject_text(driver):
+def compose_email(driver):
     composeElem = driver.find_element_by_class_name('z0')
     composeElem.click()
 
     toElem = driver.find_element_by_name("to")
-    toElem.send_keys('')
+    toElem.send_keys('zhangduona1995@gmail.com')
 
     subjElem = driver.find_element_by_name("subjectbox")
     subjElem.send_keys(subject_text)
@@ -57,26 +58,18 @@ def send_email(driver):
     except:
         pass
 
-<<<<<<< HEAD
 
-=======
->>>>>>> b1
 def quit(driver):
     driver.quit()		
 
 def main():
-    driver = add_driver()
-    get_url(driver)
-    login(driver)
-    subject_text(driver)
-    send_email(driver)
-    quit(driver)  		
+	driver = add_driver()
+	get_url(driver)
+	login(driver)
+	compose_email(driver)
+	send_email(driver)
+	time.sleep(1)
+	quit(driver)  		
 
 if __name__ == '__main__':
     main()		
-<<<<<<< HEAD
-
-
-=======
->>>>>>> b1
-
